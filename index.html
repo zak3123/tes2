@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kalkulator</title>
+</head>
+<body>
+  <h2>Kalkulator Sederhana</h2>
+  <input type="number" id="angka1" placeholder="Angka pertama" />
+  <select id="operator">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select>
+  <input type="number" id="angka2" placeholder="Angka kedua" />
+  <button onclick="hitung()">Hitung</button>
+  <p>Hasil: <span id="hasil"></span></p>
+
+  <script>
+    function hitung() {
+      const a = parseFloat(document.getElementById("angka1").value);
+      const b = parseFloat(document.getElementById("angka2").value);
+      const op = document.getElementById("operator").value;
+      let hasil;
+      if (op === "+") hasil = a + b;
+      else if (op === "-") hasil = a - b;
+      else if (op === "*") hasil = a * b;
+      else if (op === "/") hasil = b !== 0 ? a / b : "Tidak bisa dibagi 0";
+      document.getElementById("hasil").textContent = hasil;
+    }
+  </script>
+</body>
+</html>
